@@ -1,19 +1,23 @@
 var express = require('express');
 var router = express.Router();
-const bodyParser = require('body-parser');
-router.use(bodyParser.urlencoded({extended: true}))
 
 const messages = [
   {
     text: "Welcome to the MessageBoard",
     user: "System",
     added: new Date()
-  },
+  }
 ];
 
 /* GET home page. */
 router.get('/', function(req, res, next){
   res.render('index', { title: "MessageBoard", messages: messages })
+});
+
+router.post('/new', function(req, res, next) {
+  messages.push({text: req.body.message, user: req.body.user, added: new Date()})
+  console.log("POST Request received")
+  res.redirect('/')
 });
 
 module.exports = router;
