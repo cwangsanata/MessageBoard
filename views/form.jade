@@ -2,10 +2,13 @@ extends layout
 
 block content
     a(href="/") Return Home
-    h1= "Send a message"
-    form(role='form' action="/new" method="POST")
-        p User:
-            input(type="text" name="user" placeholder="")
-        p Message:
-            input(type="text" name="message" placeholder="enter your message")
-    input(type="submit", value='Send')
+    h1 Send a Message
+    form(action="/new" method="POST")
+        p
+            label(for="user") User:
+            input(type="text" name="user" id="user" placeholder="Enter your username" required)
+        p
+            label(for="message") Message:
+            input(type="text" name="message" id="message" placeholder="Enter your message" required)
+        p
+            input(type="submit" value="Send")
