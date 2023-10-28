@@ -1,0 +1,11 @@
+extends layout 
+
+block content
+    a(href="/") Return Home
+    h1= "Send a message"
+    form(role='form' action="/new" method="POST")
+        p User:
+            input(type="text" name="user" placeholder="")
+        p Message:
+            input(type="text" name="message" placeholder="enter your message")
+    input(type="submit", value='Send')
