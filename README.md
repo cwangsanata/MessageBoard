@@ -26,3 +26,4 @@ We welcome contributions from the open-source community. If you have ideas for i
 
 1. Add Images
 2. Add Persistent Walls
+3. Add user authentication
