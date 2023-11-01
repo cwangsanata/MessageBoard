@@ -5,7 +5,7 @@ block content
   p= "Post anything. Just don't be mean."
   ul
   each msg in messages
-    li= `${msg.user} | ${msg.text} | ${msg.added}`
+    li.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
 
   form(action="/" method="POST")
       p

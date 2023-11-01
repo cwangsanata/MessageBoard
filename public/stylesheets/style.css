@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.msg-div {
+  list-style-type: none;
+  padding: 0.5em;
+  border-style: inset;
+  border-color: black;
+  border-radius: 10px;
+}
