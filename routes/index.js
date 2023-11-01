@@ -5,16 +5,16 @@ const messages = [
   {
     text: "Welcome to the Wall",
     user: "System",
-    added: new Date().toDateString()
+    added: new Date()
   }
 ];
 
 router.get('/', function(req, res, next){
-  res.render('index', { title: "Wall", messages: messages })
+  res.render('index', { title: "Wall (β)", messages: messages })
 });
 
 router.post('/', function(req, res, next) {
-  messages.push({text: req.body.message, user: req.body.user, added: new Date().toDateString()})
+  messages.unshift({text: req.body.message, user: req.body.user, added: new Date()})
   res.redirect('/')
 });
 
