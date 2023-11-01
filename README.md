@@ -20,7 +20,7 @@ To get started with Wall, follow these simple steps:
 
 ## Contributing
 
-We welcome contributions from the open-source community. If you have ideas for improvements or want to report issues, please visit our GitHub repository [here](https://github.com/your-wall-repo) and open an issue or submit a pull request.
+We welcome contributions from the open-source community. If you have ideas for improvements or want to report issues, please visit our GitHub repository [here](https://github.com/your-wall-repo](https://github.com/cwangsanata/Wall/tree/main)) and open an issue or submit a pull request.
 
 ## Future Improvements
 
