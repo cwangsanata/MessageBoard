@@ -3,19 +3,18 @@ var router = express.Router();
 
 const messages = [
   {
-    text: "Welcome to the MessageBoard",
+    text: "Welcome to the Wall",
     user: "System",
-    added: new Date()
+    added: new Date().toDateString()
   }
 ];
 
 router.get('/', function(req, res, next){
-  res.render('index', { title: "MessageBoard", messages: messages })
+  res.render('index', { title: "Wall", messages: messages })
 });
 
-router.post('/new-message', function(req, res, next) {
-  messages.push({text: req.body.message, user: req.body.user, added: new Date()})
-  console.log("POST Request received")
+router.post('/', function(req, res, next) {
+  messages.push({text: req.body.message, user: req.body.user, added: new Date().toDateString()})
   res.redirect('/')
 });
 
