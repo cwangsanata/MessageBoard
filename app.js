@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/new', newMsgRouter);
+app.use('/new-message', newMsgRouter);
 app.use('/*', errorRouter);
 
 // catch 404 and forward to error handler

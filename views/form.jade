@@ -3,7 +3,7 @@ extends layout
 block content
     a(href="/") Return Home
     h1 Send a Message
-    form(action="/new" method="POST")
+    form(action="/new-message" method="POST")
         p
             label(for="user") User:
             input(type="text" name="user" id="user" placeholder="Enter your username" required)

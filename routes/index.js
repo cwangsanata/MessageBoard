@@ -13,7 +13,7 @@ router.get('/', function(req, res, next){
   res.render('index', { title: "MessageBoard", messages: messages })
 });
 
-router.post('/new', function(req, res, next) {
+router.post('/new-message', function(req, res, next) {
   messages.push({text: req.body.message, user: req.body.user, added: new Date()})
   console.log("POST Request received")
   res.redirect('/')
