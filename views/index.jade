@@ -7,7 +7,7 @@ block content
     div#msg-box
       ul
         each msg in messages.reverse()
-          li.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
+          div.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
     
     form(action="/" method="POST")
       div#form-div

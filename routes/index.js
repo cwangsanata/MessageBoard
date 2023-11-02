@@ -7,6 +7,7 @@ router.route('/')
   .get((req, res) => {
     Message.find()
     .then(messages => {
+      console.log(messages)
       res.render('index', {messages: messages})
     })
     .catch(err => {

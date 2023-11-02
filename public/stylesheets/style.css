@@ -24,6 +24,7 @@ a {
 .msg-div {
   display: flex;
   border-color: black;
+  border: 5px;
 }
 
 #form-div {
