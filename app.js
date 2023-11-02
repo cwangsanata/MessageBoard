@@ -3,6 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose')
+var bodyParser = require('body-parser')
+require('dotenv').config()
 
 var indexRouter = require('./routes/index');
 var errorRouter = require('./routes/error.js');
@@ -15,12 +18,21 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/*', errorRouter);
+
+// Connect to MongoDB
+connect().catch(err => console.log(err))
+
+async function connect() {
+  await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
+  console.log('Connected to MongoDB')
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

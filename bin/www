@@ -88,3 +88,6 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+// TODO: Remove this line
+console.log(`Access on http://localhost:${port}/`)
