@@ -6,12 +6,13 @@ router.route('/')
   // GET all messages from our database
   .get((req, res) => {
     Message.find()
-      .then(messages => {
-        res.render('index', {messages: messages})
-      })
-      .catch(err => {
-        console.log(err)
-      })
+    .then(messages => {
+      res.render('index', {messages: messages})
+      res.redirect('/')
+    })
+    .catch(err => {
+      console.log(err)
+    })
   })
   // POST a new message to our database
   .post((req, res) => {
@@ -21,13 +22,13 @@ router.route('/')
       added: new Date()
     })
     newMessage.save()
-      .then(() => {
-        console.log('Message saved')
-      })
-      .catch(err => {
-        console.log(err)
-      })  
-    res.redirect('/')
+    .then(() => {
+      console.log('Message saved')
+      res.redirect('/')
+    })
+    .catch(err => {
+      console.log(err)
+    })  
   })
 
 module.exports = router;
