@@ -1,9 +1,9 @@
 extends layout
 
 block content
-  h1= title
+  h1= "Wall"
   p= "Post anything. Just don't be mean."
-  ul
+  ul#message-board
   each msg in messages
     li.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
 
