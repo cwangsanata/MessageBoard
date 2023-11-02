@@ -8,7 +8,6 @@ router.route('/')
     Message.find()
     .then(messages => {
       res.render('index', {messages: messages})
-      res.redirect('/')
     })
     .catch(err => {
       console.log(err)
