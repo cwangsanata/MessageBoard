@@ -3,14 +3,17 @@ const Schema = mongoose.Schema
 
 const messageSchema = new Schema({
     text: {
-        String,
+        type: String,
         required: true
     },
     user: {
-        String,
+        type: String,
         required: true
     },
-    added: Date
+    added: {
+        type: Date,
+        required: true
+    }
 })
 
 module.exports = mongoose.model('Message', messageSchema)
