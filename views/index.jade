@@ -1,18 +1,19 @@
 extends layout
 
 block content
-  h1= "Wall"
-  p= "Post anything. Just don't be mean."
-  ul#message-board
-  each msg in messages
-    li= `${msg.user} | ${msg.text} | ${msg.added}`
-
-  form(action="/" method="POST")
-      p
-          label(for="user") User:
-          input(type="text" name="user" id="user" placeholder="Enter a username" required)
-      p
-          label(for="message") Message:
-          input(type="text" name="message" id="message" placeholder="Enter your message" required)
-      p
-          input(type="submit" value="Send")
+  div.content
+    h1= "Wall"
+    p= "Post anything. Just don't be mean."
+    div#msg-box
+      ul
+        each msg in messages.reverse()
+          li.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
+    
+    form(action="/" method="POST")
+      div#form-div
+        p
+            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a username" required)
+        p
+            input(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message" required)
+        p
+            input(type="submit" value="Post")

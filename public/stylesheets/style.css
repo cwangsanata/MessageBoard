@@ -6,3 +6,26 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* Main Content */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Message Box */
+#msg-box {
+  border-color: black;
+  display: flex;
+}
+
+.msg-div {
+  display: flex;
+  border-color: black;
+}
+
+#form-div {
+  display: flex;
+}
