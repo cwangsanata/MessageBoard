@@ -11,6 +11,7 @@ var indexRouter = require('./routes/indexRoute');
 var wallRouter = require('./routes/wallRoute.js');
 
 var app = express();
+// TODO: Add user authentication
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
