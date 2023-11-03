@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div.content
+    h1= "Here are all your walls!"
+    p= "Click on a wall to view it."
+
+    form(action='walls/', method="POST")
+        label(for="name") Wall Name:
+        input(type="text", name="name", required)
+        br
+
+        label(for="description") Description:
+        textarea(name="description", required)
+        br
+
+        button(type="submit") Create Wall
+
+    div#wall-box
+      ul
+        each wall in walls
+            div.wall-div
+                a(href=`/wall/${wall.id}`)= `${wall.name}`

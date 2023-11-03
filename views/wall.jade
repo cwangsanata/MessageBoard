@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  div.content
+    a(href="/wall") Back to Your Walls
+    h1= "Wall"
+    p= "Post anything. Just don't be mean." 
+    
+    div#msg-box
+      ul
+        each msg in messages.reverse()
+          div.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
+
+    form(action="" method="POST")
+      div#form-div
+        p
+            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a username" required)
+        p
+            input(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message" required)
+        p
+            input(type="submit" value="Post")
