@@ -7,8 +7,8 @@ var mongoose = require('mongoose')
 var bodyParser = require('body-parser')
 require('dotenv').config()
 
-var indexRouter = require('./routes/index');
-var errorRouter = require('./routes/error.js');
+var indexRouter = require('./routes/indexRoute');
+var wallRouter = require('./routes/wallRoute.js');
 
 var app = express();
 
@@ -24,10 +24,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/*', errorRouter);
+app.use('/walls', wallRouter);
 
 // Connect to MongoDB
-connect().catch(err => console.log(err))
+connect().catch(err => console.error(err))
 
 async function connect() {
   await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
@@ -36,10 +36,12 @@ async function connect() {
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  // next(createError(404));
+  res.render('404')
 });
 
 // error handler
+// TODO: Remove in deployement
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
