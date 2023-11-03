@@ -2,10 +2,10 @@ extends layout
 
 block content
   div.content
-    h1= "Here are all your walls!"
+    h1= "Join a Wall"
     p= "Click on a wall to view it."
 
-    form(action='walls/', method="POST")
+    form(action='/walls/new-wall', method="POST")
         label(for="name") Wall Name:
         input(type="text", name="name", required)
         br
@@ -20,4 +20,4 @@ block content
       ul
         each wall in walls
             div.wall-div
-                a(href=`/wall/${wall.id}`)= `${wall.name}`
+                a(href=`/walls/${wall.id}`)= `${wall.name}`
