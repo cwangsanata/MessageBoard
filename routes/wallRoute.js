@@ -3,69 +3,6 @@ var router = express.Router();
 exports.router = router;
 const Walls = require('../models/wall.js')
 
-// router.route('/wall')
-//   // GET all messages from our database
-//   .get((req, res) => {
-//     Message.find()
-//     .then(messages => {
-//       console.log(messages)
-//       res.render('index', {messages: messages})
-//     })
-//     .catch(err => {
-//       console.log(err)
-//     })
-//   })
-//   // POST a new message to our database
-//   .post((req, res) => {
-//     const newMessage = new Message({
-//       text: req.body.message,
-//       user: req.body.user,
-//       added: new Date()
-//     })
-//     newMessage.save()
-//     .then(() => {
-//       console.log('Message saved')
-//       res.redirect('/')
-//     })
-//     .catch(err => {
-//       console.log(err)
-//     })  
-//   })
-
-// router.route('/wall/:id')
-//     .get((req, res) => {
-//         Message.find()
-//         .then(messages => {
-//         console.log(messages)
-//         res.render('index', {messages: messages})
-//         })
-//         .catch(err => {
-//         console.log(err)
-//         })
-//     })
-//   // POST a new message to our database
-//     .post((req, res) => {
-//     const newMessage = new Message({
-//         text: req.body.message,
-//         user: req.body.user,
-//         added: new Date()
-//     })
-//     newMessage.save()
-//     .then(() => {
-//         console.log('Message saved')
-//         res.redirect('/')
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     })
-//     })
-
-testMessages = [{
-    text: "Hello World!",
-    user: "John Doe",
-    added: new Date()
-}]
-
 router.route('/')
     .get((req, res) => {
         Walls.find()
@@ -96,21 +33,19 @@ router.route('/new-wall')
     })
 
 router.route('/:id')
-    .get((req, res) => {
-        Walls.findById(req.params.id)
+    .get(async (req, res) => {
+        await Walls.findById(req.params.id)
             .then(wall => {
                 console.log(wall);
-                res.render('wall', { messages: wall.messages });
+                res.render('wall', { name: wall.name, description: wall.description, messages: wall.messages });
             })
             .catch(err => {
+                res.render('404')
                 console.log(err);
             });
-    });
-
-
-router.route('/:id/new-message')
-    .post((req, res) => {
-        Walls.findById(req.params.id)
+    })
+    .post(async (req, res) => {
+        await Walls.findById(req.params.id)
             .then(wall => {
                 wall.messages.push({
                     text: req.body.message,
@@ -129,7 +64,6 @@ router.route('/:id/new-message')
             .catch(err => {
                 console.log(err)
             })
-    });
-
+        });
 
 module.exports = router;
