@@ -12,6 +12,8 @@ var wallRouter = require('./routes/wallRoute.js');
 
 var app = express();
 // TODO: Add user authentication
+// TODO: Force Wall Name to be unique
+// TODO: Add deletion threshold to each wall (do by raw, then percentage if given enough time)
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
