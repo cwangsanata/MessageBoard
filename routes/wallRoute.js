@@ -16,6 +16,9 @@ router.route('/')
     });
 
 router.route('/new-wall')
+    .get((req, res) => {
+        res.render('new-wall')
+    })
     .post((req, res) => {
         const newWall = new Walls({
             name: req.body.name,
@@ -28,6 +31,8 @@ router.route('/new-wall')
                 res.redirect(`/walls/${newWall._id}`)
             })
             .catch(err => {
+                // update the front end with an error message popup jade
+                res.render('duplicate')
                 console.log(err)
             })
     })

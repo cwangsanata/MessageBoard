@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    a(href="/walls") Back to Walls
+    form(action='/walls/new-wall', method="POST")
+        label(for="name") Wall Name:
+        input(type="text", name="name", required)
+        br
+
+        label(for="description") Description:
+        textarea(name="description", required)
+        br
+
+        button(type="submit") Create Wall
