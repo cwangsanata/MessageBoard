@@ -4,7 +4,8 @@ const Schema = mongoose.Schema
 const wallSchema = new Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     description: String,
     messages: {
