@@ -6,7 +6,8 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: inherit;
+  text-decoration: inherit;
 }
 
 /* Main Content */
@@ -26,7 +27,7 @@ a {
 .msg-div {
   display: flex;
   border-color: black;
-  border: 5px;
+  border: 5px; 
 }
 
 #form-div {
@@ -34,12 +35,34 @@ a {
 }
 
 /* Walls Page */
+#join-wall-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-button a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-style: outset;
+  border-radius: 5px;
+  padding: 1em;
+  background-color: #8030f8;
+  border-width: 1px;
+}
+
 #wall-box {
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  max-width: 80vw; 
+  margin: auto;
+  border-radius: 5px;
 }
 
 .wall-card {
@@ -48,13 +71,20 @@ a {
   border-color: #E1E8ED;
   border-style: outset;
   border-radius: 5px;
-  margin: 20px;
-  justify-content: space-between;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
   background-color: #3d597a;
+  width: 20vw;
+  height: 18vh;
+  min-width: 200px; /* Add this line */
+  max-width: 300px; /* Add this line */
+  min-height: 200px; /* Add this line */
+  max-height: 300px; /* Add this line */
  }
 
- .wall-card:hover {
-   background-color: #243447;
+ .wall-card:hover, #join-wall-header a:hover {
+   background-color: #47698f;
  }
 
 .wall-content {
@@ -65,4 +95,13 @@ a {
   align-items: center;
   border: 2px;
   margin: 10px;
+  white-space: nowrap; /* Add this line */
+  overflow: hidden; /* Add this line */
+  text-overflow: ellipsis; /* Add this line */
+}
+
+.wall-content p {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
