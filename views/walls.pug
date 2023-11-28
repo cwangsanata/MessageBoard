@@ -1,15 +1,16 @@
 extends layout
 
 block content
-  div.content
+  div#join-wall-header
     h1= "Join a Wall"
-    a(href="/walls/new-wall") Create a New Wall
+    div.nav-button
+      a(href="/walls/new-wall") Create a New Wall
     p= "Click on a wall to begin posting"
 
-    div#wall-box
-      each wall in walls
+  div#wall-box
+    each wall in walls
+      a(href=`/walls/${wall.id}`)
         div.wall-card
           div.wall-content
-              a(href=`/walls/${wall.id}`)= `${wall.name}`
-              p Description:
+              h2 #{wall.name}
               p #{wall.description}
