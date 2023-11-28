@@ -4,11 +4,9 @@ block content
     a(href="/walls") Back to Walls
     form(action='/walls/new-wall', method="POST")
         label(for="name") Wall Name:
-        input(type="text", name="name", required)
-        br
+        input(type="text", name="name", placeholder="Enter the Wall's name (Max 128 char)" maxlength="128" required)
 
         label(for="description") Description:
-        textarea(name="description", required)
-        br
+        textarea(name="description", placeholder="Enter a Description (Max 256 char)" maxlength="256" required)
 
         button(type="submit") Create Wall

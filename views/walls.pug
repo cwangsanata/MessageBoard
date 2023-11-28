@@ -3,12 +3,13 @@ extends layout
 block content
   div.content
     h1= "Join a Wall"
-    p= "Click on a wall to view it."
-
-    a(href="/walls/new-wall") Create a new wall
+    a(href="/walls/new-wall") Create a New Wall
+    p= "Click on a wall to begin posting"
 
     div#wall-box
-      ul
-        each wall in walls
-            div.wall-div
-                a(href=`/walls/${wall.id}`)= `${wall.name}`
+      each wall in walls
+        div.wall-card
+          div.wall-content
+              a(href=`/walls/${wall.id}`)= `${wall.name}`
+              p Description:
+              p #{wall.description}

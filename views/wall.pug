@@ -14,8 +14,9 @@ block content
     form(action="" method="POST")
       div#form-div
         p
-            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a username" required)
+            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a name" value="Anonymous" data-value="-1" required)
         p
             input(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message" required)
         p
             input(type="submit" value="Post")
+        
