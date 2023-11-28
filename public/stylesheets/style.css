@@ -76,11 +76,9 @@ a {
   align-items: center;
   background-color: #3d597a;
   width: 20vw;
-  height: 18vh;
-  min-width: 200px; /* Add this line */
-  max-width: 300px; /* Add this line */
-  min-height: 200px; /* Add this line */
-  max-height: 300px; /* Add this line */
+  height: 20vh;
+  min-width: 20vw; /* Add this line */
+  max-width: 20vw; /* Add this line */
  }
 
  .wall-card:hover, #join-wall-header a:hover {
