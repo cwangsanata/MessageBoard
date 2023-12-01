@@ -25,8 +25,9 @@ We welcome contributions from the open-source community. If you have ideas for i
 1. Allow for images 
 2. Add NextJS Integration
 3. Add user accounts and authentication
-4. Add Lazy Loading / Limit Messages on a single page
+4. Add Pagination
 5. Add Search and Sort
 6. Add moderation and banned words
 7. Add Reply feature
+8. Add Likes
 
