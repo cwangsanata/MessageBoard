@@ -28,4 +28,5 @@ We welcome contributions from the open-source community. If you have ideas for i
 4. Add Lazy Loading / Limit Messages on a single page
 5. Add Search and Sort
 6. Add moderation and banned words
+7. Add Reply feature
 
