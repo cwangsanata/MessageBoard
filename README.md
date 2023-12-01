@@ -1,5 +1,5 @@
 # Wall - Post Anything, Anytime
-
+![Wall Logo With Text](https://github.com/cwangsanata/Wall/blob/main/public/images/logo-text-w.png)
 ## Introduction
 
 Welcome to Wall, a simple and versatile web application that empowers users to post content to your wall. Whether you want to share your thoughts, links, or anything else with the world, Wall makes it easy and hassle-free. With Wall, you can create a digital bulletin board for anything and everything.
