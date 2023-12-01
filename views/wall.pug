@@ -13,9 +13,9 @@ block content
       div.msg-form
         h2= "Post a Message to this Wall"
         div.msg-form-text
-            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a name" data-value="-1" required)
+            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a name" maxlength=100 required)
         
-            textarea(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message" maxlength=140 required)
+            textarea(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message"  maxlength=240  required)
         div.msg-form-buttons
             button(type="submit" value="Post") Post 
     
