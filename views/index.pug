@@ -2,19 +2,56 @@ extends layout
 
 block content
   div.content
-    h1= "Welcome to the Wall"
-    p= "The Wall is a new social media platform that allows you to post anonymized messages on different walls. You can create your own wall or post on existing ones. It's a fun and interactive way to share your thoughts and ideas with the world."
+    div.welcome
+      div#title
+        h1= "Welcome"
+        h1= "to"
+        h1= "Wall"
+        h2= "Post Anything, Anytime"
+      div.nav-wrapper
+        div.nav-button
+          a(href="/walls") Check Out The Walls
+        div.nav-button
+          a(href="/walls/new-wall") Create Your Own Wall
 
-    h2= "Why Choose The Wall?"
-    ul
-      li= "Easy to use: Just create a wall and start posting!"
-      li= "Interactive: Engage with other users by posting on their walls."
-      li= "Free to use: No data mining and open source."
-      li= "Anonymous: No need to create an account. Just post and go!"
+    div.feature-content
+      h2="What is Wall?"
+      p= p= "Wall is a new social media platform that allows you to post anonymized messages on different walls. You can create your own wall or post on existing ones. It's a fun and interactive way to share your thoughts and ideas with the world."
 
-    h2= "Get Started"
-    p= "Ready to start posting? Click the button below to check out the walls or create your own."
-    div.nav-button
-      a(href="/walls") Check Out The Walls
-    div.nav-button
-      a(href="/walls/new-wall") Create Your Own Wall
+    
+    div.feature-content-2
+      h2= "Why Choose Wall?"
+      div.feature-card-wrapper
+        div.feature-card
+          div.feature-card-inner
+            div.feature-card-front
+              h3= "Easy to use"
+              p= "👍"
+            div.feature-card-back
+              p= "Just create a wall and start posting!"
+        div.feature-card
+          div.feature-card-inner
+            div.feature-card-front
+              h3= "Interactive"
+              p= "👉"
+            div.feature-card-back
+              p= "Engage with other users by posting on their walls."
+        div.feature-card
+          div.feature-card-inner
+            div.feature-card-front
+              h3= "Free to use"
+              p= "🆓"
+            div.feature-card-back
+              p= "No data mining and open source."
+        div.feature-card
+          div.feature-card-inner
+            div.feature-card-front
+              h3= "Anonymous"
+              p= "🤐"
+            div.feature-card-back
+              p="No need to create an account. Just post and go!"
+
+    div.feature-content
+      h2= "What's up with the name?"
+      p= "We wanted Wall to be a digital manifestation of the walls you see in real life. You can post whatever you want on a wall and it's up to the owner to decide what to do with it. We also wanted to make it easy to remember and type. Wall is short, simple, and to the point."
+      
