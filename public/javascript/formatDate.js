@@ -1,12 +1,7 @@
 const { DateTime } = require("luxon");
 
-function getDateTime(date) {
-    try {
-        const dateTime = DateTime.fromISO(date);
-        return dateTime.toLocaleString(DateTime.DATETIME_MED);
-    } catch (err) {
-        console.log(err);
-    }
+function getDateTimeFromISO(date) {
+    return DateTime.fromISO(date.toISOString()).toLocaleString(DateTime.DATETIME_MED);
 }
 
-module.exports = getDateTime;
+module.exports = getDateTimeFromISO;
