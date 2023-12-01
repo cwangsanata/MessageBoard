@@ -3,6 +3,18 @@ extends layout
 block content
   div.content
     h1= "Welcome to the Wall"
-    h3= "Your new social media platform for posting" 
+    p= "The Wall is a new social media platform that allows you to post anonymized messages on different walls. You can create your own wall or post on existing ones. It's a fun and interactive way to share your thoughts and ideas with the world."
+
+    h2= "Why Choose The Wall?"
+    ul
+      li= "Easy to use: Just create a wall and start posting!"
+      li= "Interactive: Engage with other users by posting on their walls."
+      li= "Free to use: No data mining and open source."
+      li= "Anonymous: No need to create an account. Just post and go!"
+
+    h2= "Get Started"
+    p= "Ready to start posting? Click the button below to check out the walls or create your own."
     div.nav-button
       a(href="/walls") Check Out The Walls
+    div.nav-button
+      a(href="/walls/new-wall") Create Your Own Wall
