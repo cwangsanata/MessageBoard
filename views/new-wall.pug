@@ -1,14 +1,17 @@
 extends layout 
 
 block content 
-    a(href="/walls") Back to Walls
-    form(action='/walls/new-wall', method="POST")
-        label(for="name") Wall Name:
-        input(type="text", name="name", required)
-        br
+    div.content
+        
+        div.nav-button
+            a(href="/walls") Back to Walls
+        h1= "Create a New Wall"
+        div#new-wall-form
+            form(action='/walls/new-wall', method="POST")
+                label(for="name") Wall Name:
+                input(type="text", name="name", placeholder="Enter the Wall's name" maxlength="32" required)
 
-        label(for="description") Description:
-        textarea(name="description", required)
-        br
+                label(for="description") Description:
+                textarea(name="description", placeholder="Enter a Description (Max 256 char)" maxlength="128" required)
 
-        button(type="submit") Create Wall
+                button(type="submit") Create Wall

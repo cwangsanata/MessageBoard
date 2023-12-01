@@ -2,20 +2,28 @@ extends layout
 
 block content
   div.content
-    a(href="/walls") Back to the Walls
-    h1= name
-    h3= description
-    
-    div#msg-box
-      ul
-        each msg in messages.reverse()
-          div.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
+    div.wall-header
+      h1= name
+      h3= description
+
+    div.nav-button
+      a(href="/walls") Back To Walls
 
     form(action="" method="POST")
-      div#form-div
-        p
-            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a username" required)
-        p
-            input(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message" required)
-        p
-            input(type="submit" value="Post")
+      div.msg-form
+        h2= "Post a Message to this Wall"
+        div.msg-form-text
+            input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a name" maxlength=100 required)
+        
+            textarea(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message"  maxlength=240  required)
+        div.msg-form-buttons
+            button(type="submit" value="Post") Post 
+    
+    div#msg-box
+      each msg in messages.reverse()
+        div.msg-wrapper
+          div.msg-header
+            h3 #{msg.user} 
+            h3 #{msg.added} 
+          div.msg-content
+            p #{msg.text} 
