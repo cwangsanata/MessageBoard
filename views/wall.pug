@@ -11,14 +11,19 @@ block content
     div#msg-box
       ul
         each msg in messages.reverse()
-          div.msg-div= `${msg.user} | ${msg.text} | ${msg.added}`
+          div.msg-wrapper
+            div.msg-header
+              p #{msg.user} 
+              p #{msg.added} 
+            div.msg-content
+              p #{msg.text} 
 
     form(action="" method="POST")
       div#form-div
         p
             input(type="text" name="user" id="user" autocomplete="off" placeholder="Enter a name" value="Anonymous" data-value="-1" required)
         p
-            input(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message" required)
+            input(type="text" name="message" id="message" autocomplete="off" placeholder="Enter your message" maxlength=140 required)
         p
             input(type="submit" value="Post")
         
