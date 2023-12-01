@@ -22,7 +22,7 @@ We welcome contributions from the open-source community. If you have ideas for i
 
 ## Future Improvements
 
-1. Allow for images
+1. Allow for images 
 2. Add NextJS Integration
 3. Add user accounts and authentication
 4. Add Lazy Loading / Limit Messages on a single page
