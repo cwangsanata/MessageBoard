@@ -1,0 +1,8 @@
+{
+    "builds": [
+      {
+        "src": "bin/www",
+        "use": "@vercel/node"
+      }
+    ]
+  }
