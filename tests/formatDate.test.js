@@ -14,7 +14,7 @@ test ('formatDate returns a string in the correct format (fixed date)', () => {
 });
 
 test ('formatDate returns a string in the correct format (current date)', () => {
-    const dateRegex = '/\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{1,2},\s\d{4},\s\d{1,2}:\d{2}\s(?:AM|PM)\b/';
+    const dateRegex = /\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s\d{1,2},\s\d{4},\s\d{1,2}:\d{2}\s(?:AM|PM)\b/;
     expect(formatDate(new Date())).toMatch(dateRegex);
 });
 
