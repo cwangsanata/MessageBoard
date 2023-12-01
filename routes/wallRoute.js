@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 exports.router = router;
 const Walls = require('../models/wall.js')
-const getDateTime = require('../public/javascript/formatDate.js')
+const getDateTimeFromISO = require('../public/javascript/formatDate.js')
 
 router.route('/')
     .get((req, res) => {
@@ -41,10 +41,14 @@ router.route('/:id')
     .get(async (req, res) => {
         await Walls.findById(req.params.id)
             .then(wall => {
+                wall.messages.forEach(message => {
+                    message.added = getDateTimeFromISO(message.added)
+                })
                 res.render('wall', { 
                     name: wall.name, 
                     description: wall.description, 
-                    messages: wall.messages });
+                    messages: wall.messages 
+                });
             })
             .catch(err => {
                 res.render('404')
@@ -57,7 +61,7 @@ router.route('/:id')
                 wall.messages.push({
                     text: req.body.message,
                     user: req.body.user,
-                    added: getDateTime(new Date())
+                    added: new Date()
                 })
                 wall.save()
                     .then(() => {
