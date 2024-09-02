@@ -32,4 +32,4 @@ We welcome contributions from the open-source community. If you have ideas for i
 8. Add Likes
 
 ## Live Site
-Check out the website at http://www.wallapp.live/
+Check out the archived website [here](https://web.archive.org/web/20231207120528/http://www.wallapp.live/)!
